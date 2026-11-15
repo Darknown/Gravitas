@@ -1,0 +1,6 @@
+{
+  "name": "Three-Body Problem Visualizer",
+  "description": "Interactive 3D Newtonian three-body gravitational simulator with RK4 numerical integration, orbital trails, parameter controls, and synchronized real-time telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
