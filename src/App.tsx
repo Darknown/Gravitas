@@ -307,6 +307,11 @@ export default function App() {
               value={speedMultiplier}
               onChange={(e) => setSpeedMultiplier(parseFloat(e.target.value))}
               className="sci-slider w-14 sm:w-20 cursor-pointer"
+              style={
+                {
+                  '--slider-progress': `${(((Math.min(5.0, Math.max(0.1, speedMultiplier)) - 0.1) / (5.0 - 0.1)) * 100).toFixed(2)}%`,
+                } as React.CSSProperties
+              }
             />
             <span
               className="w-8 text-right font-mono text-[11px] tabular-nums text-slate-100"

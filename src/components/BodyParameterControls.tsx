@@ -57,6 +57,9 @@ const SliderNumberRow: React.FC<SliderNumberRowProps> = ({
     }
   };
 
+  const clampedValue = Math.min(max, Math.max(min, value));
+  const progressPct = max > min ? ((clampedValue - min) / (max - min)) * 100 : 0;
+
   return (
     <div className="grid grid-cols-[54px_1fr_72px] items-center gap-2">
       <label
@@ -72,10 +75,15 @@ const SliderNumberRow: React.FC<SliderNumberRowProps> = ({
         min={min}
         max={max}
         step={step}
-        value={Math.min(max, Math.max(min, value))}
+        value={clampedValue}
         onChange={(e) => onChange(parseFloat(e.target.value))}
         className="sci-slider w-full cursor-pointer"
-        style={{ '--slider-accent': accentColor } as React.CSSProperties}
+        style={
+          {
+            '--slider-accent': accentColor,
+            '--slider-progress': `${progressPct.toFixed(2)}%`,
+          } as React.CSSProperties
+        }
       />
       <input
         id={`${id}-num`}

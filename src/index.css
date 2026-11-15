@@ -24,9 +24,21 @@ input[type="range"].sci-slider {
   appearance: none;
   height: 4px;
   border-radius: 9999px;
-  background: #1e293b;
+  background-color: #1e293b;
+  background-image: linear-gradient(
+    var(--slider-accent, #38bdf8),
+    var(--slider-accent, #38bdf8)
+  );
+  background-size: var(--slider-progress, 0%) 100%;
+  background-repeat: no-repeat;
   outline: none;
   touch-action: none;
+}
+
+input[type="range"].sci-slider::-moz-range-track {
+  background: transparent;
+  height: 4px;
+  border-radius: 9999px;
 }
 
 input[type="range"].sci-slider::-webkit-slider-thumb {

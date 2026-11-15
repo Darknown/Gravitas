@@ -10,6 +10,12 @@ import {
 import { BodyParameterControls } from './BodyParameterControls';
 import { CollapsibleSection } from './CollapsibleSection';
 
+function sliderProgress(value: number, min: number, max: number): string {
+  if (max <= min) return '0%';
+  const clamped = Math.min(max, Math.max(min, value));
+  return `${(((clamped - min) / (max - min)) * 100).toFixed(2)}%`;
+}
+
 interface LeftControlPanelProps {
   simState: SimulationState;
   activePresetId: string;
@@ -190,6 +196,11 @@ export const LeftControlPanel: React.FC<LeftControlPanelProps> = ({
                 value={bodyCount}
                 onChange={(e) => onSetBodyCount(parseInt(e.target.value, 10))}
                 className="sci-slider w-full cursor-pointer"
+                style={
+                  {
+                    '--slider-progress': sliderProgress(bodyCount, MIN_BODIES, MAX_BODIES),
+                  } as React.CSSProperties
+                }
               />
             </div>
 
@@ -214,6 +225,11 @@ export const LeftControlPanel: React.FC<LeftControlPanelProps> = ({
                     onUpdatePhysicsParams({ G: parseFloat(e.target.value) })
                   }
                   className="sci-slider w-full cursor-pointer"
+                  style={
+                    {
+                      '--slider-progress': sliderProgress(simState.G, 0.1, 4.0),
+                    } as React.CSSProperties
+                  }
                 />
                 <input
                   id="gravity-const-num"
@@ -253,6 +269,11 @@ export const LeftControlPanel: React.FC<LeftControlPanelProps> = ({
                     onUpdatePhysicsParams({ dt: parseFloat(e.target.value) })
                   }
                   className="sci-slider w-full cursor-pointer"
+                  style={
+                    {
+                      '--slider-progress': sliderProgress(simState.dt, 0.0005, 0.01),
+                    } as React.CSSProperties
+                  }
                 />
                 <input
                   id="timestep-num"
@@ -291,6 +312,11 @@ export const LeftControlPanel: React.FC<LeftControlPanelProps> = ({
                 value={trailLength}
                 onChange={(e) => onChangeTrailLength(parseInt(e.target.value, 10))}
                 className="sci-slider w-full cursor-pointer"
+                style={
+                  {
+                    '--slider-progress': sliderProgress(trailLength, 50, 2000),
+                  } as React.CSSProperties
+                }
               />
             </div>
           </div>
