@@ -218,7 +218,7 @@ export default function App() {
 
   return (
     <div
-      className="flex h-screen w-screen flex-col overflow-hidden bg-[#060911] text-slate-100"
+      className="fixed inset-0 flex flex-col overflow-hidden bg-[#060911] text-slate-100"
       data-playing={isPlaying ? 'true' : 'false'}
       data-preset={activePresetId}
       data-body-count={simState.bodies.length}

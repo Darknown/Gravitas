@@ -166,7 +166,7 @@ export const TelemetryDashboard: React.FC<TelemetryDashboardProps> = ({
         </span>
       </div>
 
-      <div className="flex-1 overflow-y-auto sci-scroll">
+      <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain sci-scroll">
         {/* 1. System Statistics & Stability Monitor */}
         <CollapsibleSection
           title="System Statistics"

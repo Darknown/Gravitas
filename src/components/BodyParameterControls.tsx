@@ -61,7 +61,7 @@ const SliderNumberRow: React.FC<SliderNumberRowProps> = ({
     <div className="grid grid-cols-[54px_1fr_72px] items-center gap-2">
       <label
         htmlFor={`${id}-num`}
-        className="text-[11px] font-medium text-slate-400 truncate"
+        className="text-[11px] font-medium text-slate-400 truncate select-none"
       >
         {label}
       </label>
