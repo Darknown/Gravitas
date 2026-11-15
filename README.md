@@ -2,6 +2,12 @@
 
 > *Explore gravity. Simulate chaos. Visualize the universe.*
 
+## Live Demo
+
+**[Try Gravitas – N-Body Gravitational Simulator](https://gravitas-wine.vercel.app/)**
+
+Explore the simulator directly in your browser. No installation required.
+
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-7.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-0.187-000000?logo=threedotjs&logoColor=white)](https://threejs.org/)
