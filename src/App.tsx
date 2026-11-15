@@ -15,6 +15,7 @@ import {
   Sparkles,
   StepForward,
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { LeftControlPanel } from './components/LeftControlPanel';
 import { TelemetryDashboard } from './components/TelemetryDashboard';
 import { generateRandomSystem, ORBIT_PRESETS } from './physics/presets';
@@ -543,6 +544,7 @@ export default function App() {
           </div>
         )}
       </main>
+      <SpeedInsights />
     </div>
   );
 }
